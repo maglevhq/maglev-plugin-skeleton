@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+# This command will automatically be run when you run "rails" with Rails gems
+# installed from the root of your application.
+
+ENGINE_ROOT = File.expand_path("..", __dir__)
+ENGINE_PATH = File.expand_path("../lib/maglev/plugin/skeleton/engine", __dir__)
+
+# Commands that should run in the dummy app
+DUMMY_APP_COMMANDS = %w[server s console c db db:create db:migrate db:rollback db:seed db:reset db:setup db:drop db:schema db:structure routes generate g destroy runner runner].freeze
+
+# If the command should run in the dummy app, delegate to it
+if ARGV.any? { |arg| DUMMY_APP_COMMANDS.include?(arg.split(':').first) }
+  dummy_app_path = File.expand_path("../spec/dummy", __dir__)
+  dummy_rails = File.join(dummy_app_path, "bin/rails")
+  
+  if File.exist?(dummy_rails)
+    Dir.chdir(dummy_app_path) do
+      exec dummy_rails, *ARGV
+    end
+  else
+    abort "Dummy app not found at #{dummy_app_path}"
+  end
+end
+
+# Set up gems listed in the Gemfile.
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../Gemfile", __dir__)
+require "bundler/setup" if File.exist?(ENV["BUNDLE_GEMFILE"])
+
+require "rails"
+# Pick the frameworks you want:
+require "active_model/railtie"
+require "active_job/railtie"
+require "active_record/railtie"
+require "active_storage/engine"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "action_mailbox/engine"
+require "action_text/engine"
+require "action_view/railtie"
+require "action_cable/engine"
+# require "rails/test_unit/railtie"
+require "rails/engine/commands"
