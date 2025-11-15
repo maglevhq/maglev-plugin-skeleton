@@ -3,7 +3,7 @@
 # installed from the root of your application.
 
 ENGINE_ROOT = File.expand_path("..", __dir__)
-ENGINE_PATH = File.expand_path("../lib/maglev/plugin/skeleton/engine", __dir__)
+ENGINE_PATH = File.expand_path("../lib/maglev/skeleton_plugin/engine", __dir__)
 
 # Commands that should run in the dummy app
 DUMMY_APP_COMMANDS = %w[server s console c db db:create db:migrate db:rollback db:seed db:reset db:setup db:drop db:schema db:structure routes generate g destroy runner runner].freeze

@@ -17,8 +17,8 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_03_215851) do
     t.string "name", null: false
     t.bigint "record_id", null: false
     t.string "record_type", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+    t.index [ "blob_id" ], name: "index_active_storage_attachments_on_blob_id"
+    t.index [ "record_type", "record_id", "name", "blob_id" ], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
   create_table "active_storage_blobs", force: :cascade do |t|
@@ -30,13 +30,13 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_03_215851) do
     t.string "key", null: false
     t.text "metadata"
     t.string "service_name", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+    t.index [ "key" ], name: "index_active_storage_blobs_on_key", unique: true
   end
 
   create_table "active_storage_variant_records", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
-    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+    t.index [ "blob_id", "variation_digest" ], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
   create_table "maglev_assets", force: :cascade do |t|
@@ -54,9 +54,9 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_03_215851) do
     t.string "locale", null: false
     t.bigint "maglev_page_id"
     t.string "value", null: false
-    t.index ["canonical", "locale", "value"], name: "canonical_speed"
-    t.index ["canonical", "maglev_page_id", "locale"], name: "scoped_canonical_speed"
-    t.index ["maglev_page_id"], name: "index_maglev_page_paths_on_maglev_page_id"
+    t.index [ "canonical", "locale", "value" ], name: "canonical_speed"
+    t.index [ "canonical", "maglev_page_id", "locale" ], name: "scoped_canonical_speed"
+    t.index [ "maglev_page_id" ], name: "index_maglev_page_paths_on_maglev_page_id"
   end
 
   create_table "maglev_pages", force: :cascade do |t|
@@ -80,7 +80,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_03_215851) do
     t.boolean "published", default: false
     t.json "sections_translations", default: {}
     t.datetime "updated_at", null: false
-    t.index ["container_id", "container_type", "published"], name: "maglev_sections_content_stores_container_and_published", unique: true
+    t.index [ "container_id", "container_type", "published" ], name: "maglev_sections_content_stores_container_and_published", unique: true
   end
 
   create_table "maglev_sites", force: :cascade do |t|

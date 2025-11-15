@@ -4,7 +4,7 @@ class SwitchToLocalizedPageFields < ActiveRecord::Migration[6.1]
     remove_column :maglev_pages, :title if column_exists?(:maglev_pages, :title)
     remove_column :maglev_pages, :seo_title if column_exists?(:maglev_pages, :seo_title)
     remove_column :maglev_pages, :meta_description if column_exists?(:maglev_pages, :meta_description)
-      
+
     change_table :maglev_pages do |t|
       if t.respond_to? :jsonb
         t.jsonb :title_translations, default: {}

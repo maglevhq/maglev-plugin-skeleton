@@ -7,7 +7,7 @@ class CreateMaglevAssets < ActiveRecord::Migration[6.0]
       t.string :content_type
       t.integer :width
       t.integer :height
-      t.integer :byte_size      
+      t.integer :byte_size
 
       t.timestamps
     end

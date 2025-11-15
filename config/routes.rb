@@ -1,2 +1,2 @@
-Maglev::Plugin::Skeleton::Engine.routes.draw do
+Maglev::SkeletonPlugin::Engine.routes.draw do
 end

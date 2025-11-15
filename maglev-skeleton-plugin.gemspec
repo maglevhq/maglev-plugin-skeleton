@@ -1,13 +1,13 @@
-require_relative "lib/maglev/plugin/skeleton/version"
+require_relative "lib/maglev/skeleton_plugin/version"
 
 Gem::Specification.new do |spec|
-  spec.name        = "maglev-plugin-skeleton"
-  spec.version     = Maglev::Plugin::Skeleton::VERSION
+  spec.name        = "maglev-skeleton-plugin"
+  spec.version     = Maglev::SkeletonPlugin::VERSION
   spec.authors     = [ "Did" ]
   spec.email       = [ "didier.lafforgue@gmail.com" ]
   spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Maglev::Plugin::Skeleton."
-  spec.description = "TODO: Description of Maglev::Plugin::Skeleton."
+  spec.summary     = "TODO: Summary of Maglev::SkeletonPlugin."
+  spec.description = "TODO: Description of Maglev::SkeletonPlugin."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
@@ -22,5 +22,7 @@ Gem::Specification.new do |spec|
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   end
 
+  # spec.add_dependency "maglevcms", "> 3.0.0.alpha"
+  spec.add_dependency "ruby-openai"
   spec.add_dependency "rails", ">= 8.1.1"
 end

@@ -1,4 +1,4 @@
-# Maglev::Plugin::Skeleton
+# Maglev::SkeletonPlugin
 
 [WIP] This is the basic foundation of a Maglev plugin.
 
@@ -9,7 +9,7 @@ How to use my plugin.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "maglev-plugin-skeleton"
+gem "maglev-skeleton-plugin"
 ```
 
 And then execute:
@@ -19,7 +19,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install maglev-plugin-skeleton
+$ gem install maglev-skeleton-plugin
 ```
 
 ## Local development

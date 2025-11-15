@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Mount the engine
-  mount Maglev::Plugin::Skeleton::Engine, at: "/"
+  mount Maglev::SkeletonPlugin::Engine, at: "/"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
