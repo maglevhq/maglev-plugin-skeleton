@@ -1,5 +1,7 @@
-PATH
-  remote: ../maglev-core
+GIT
+  remote: https://github.com/maglevhq/maglev-core.git
+  revision: 2ac865383eff41ce52d0922d342e9f0624321b90
+  branch: master
   specs:
     maglevcms (3.0.0.beta2)
       class_variants (~> 1.1)

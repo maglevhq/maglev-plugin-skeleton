@@ -11,7 +11,8 @@ gem "image_processing", "~> 1.3"
 
 gem "propshaft"
 
-gem "maglevcms", path: "../maglev-core"
+# gem "maglevcms", path: "../maglev-core"
+gem "maglevcms", github: "maglevhq/maglev-core", branch: "master" #, require: false
 
 # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
 gem "rubocop-rails-omakase", require: false

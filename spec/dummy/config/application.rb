@@ -38,5 +38,7 @@ module Dummy
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.railties_order = [Maglev::Engine, Maglev::SkeletonPlugin::Engine, :main_app, :all]
   end
 end
